@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>OLS Application</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="bolierplate banner">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <!-- <script type="text/javascript" src="angular/angular_1.2.0.min.js"></script> -->
+    <script type="text/javascript" src="js/angular.js"></script>
+   <link rel="stylesheet" type="text/css" href="css/main.css">
+    <!-- endbuild -->
+</head>
+
+<body ng-app="myModule" ng-controller="CustomerController">
+
+  <table border="1" cellspacing="0" cellpadding="0">
+    <tr>
+      <th>Customer Name</th>
+      <th>City Name</th>
+      <th>Country Name</th>
+    </tr>
+    <tr ng-repeat="customer in Customers">
+      <td> {{ customer.Name }} </td>
+      <td> {{ customer.City }} </td>
+      <td> {{ customer.Country }} </td>
+    </tr>
+  </table>
+
+  <script type="text/javascript">
+    var app = angular.module("myModule",[]);
+
+    app.controller("CustomerController", function($scope,$http){
+        $http.get('js/Customers_JSON.json')
+        .then(function(response){
+          $scope.Customers = response.data;
+        })
+    })
+  </script>
+</body>
+
+</html>
