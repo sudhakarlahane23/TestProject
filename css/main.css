@@ -1,0 +1,25 @@
+* {
+	margin: 0;
+	padding: 0;	
+	box-sizing: border-box;
+}
+
+
+body {
+	font-family: arial;
+}
+.tableContainer {
+	
+}
+input {
+	margin: 0 0 20px 0; 
+}
+table {
+	border-collapse: collapse;
+	width: 600px;
+	margin: 50px auto;
+}
+td,th {
+	padding: 5px;
+}
+
